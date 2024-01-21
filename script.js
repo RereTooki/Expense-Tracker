@@ -14,7 +14,7 @@ function addExpense() {
 
     if (expenseName && !isNaN(amount) && category) {
         // Create a new expense object
-        const newExpense = { name: expenseName, amount, category };
+        const newExpense = { name: expenseName.toUpperCase(), amount, category };
 
         // Add the new expense to the expenses list
         expenses.push(newExpense);
@@ -48,7 +48,7 @@ function displayExpenses() {
 
         const infoElement = document.createElement('div');
         infoElement.classList.add('info');
-        infoElement.innerHTML = `<strong>${expense.name}</strong> - ₦${expense.amount} (${expense.category})`;
+        infoElement.innerHTML = `<strong>${expense.name}</strong> - ₦${expense.amount} [${expense.category}]`;
 
         const deleteBtnElement = document.createElement('button');
         deleteBtnElement.classList.add('delete-btn');
