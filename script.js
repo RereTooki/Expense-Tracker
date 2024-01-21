@@ -1,10 +1,10 @@
 // Sample data for initial display
-// const initialExpenses = [
-//     { name: 'Groceries', amount: 50, category: 'Food' },
-//     { name: 'Internet Bill', amount: 30, category: 'Utilities' },
-//     { name: 'Internet Bill', amount: 30, category: 'Utilities' },
-//     { name: 'Internet Bill', amount: 30, category: 'Utilities' },
-// ];
+const initialExpenses = [
+    // { name: 'Groceries', amount: 50, category: 'Food' },
+    // { name: 'Internet Bill', amount: 30, category: 'Utilities' },
+    // { name: 'Internet Bill', amount: 30, category: 'Utilities' },
+    // { name: 'Internet Bill', amount: 30, category: 'Utilities' },
+];
 
 // Function to add an expense
 function addExpense() {
@@ -48,7 +48,7 @@ function displayExpenses() {
 
         const infoElement = document.createElement('div');
         infoElement.classList.add('info');
-        infoElement.innerHTML = `<strong>${expense.name}</strong> - $${expense.amount} (${expense.category})`;
+        infoElement.innerHTML = `<strong>${expense.name}</strong> - ₦${expense.amount} (${expense.category})`;
 
         const deleteBtnElement = document.createElement('button');
         deleteBtnElement.classList.add('delete-btn');
