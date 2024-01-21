@@ -1,0 +1,150 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+body {
+    background-image: linear-gradient(90deg, rgba(83,83,69,0.7868872549019608) 35%, rgba(83,83,69,0.5636379551820728) 100%), url(./assets//images/bg.jpg);
+    background-size: 100vw 220vh;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.introPage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+}
+
+.introText {
+    color: white;
+    font-size: 5vw;   
+    font-weight: 900;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-align: center;   
+    
+}
+.bodyContent {
+    min-height: 100vh;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border-radius: 10px;    
+    background-color: #f3f3f3;
+    width: 80vw;
+    max-width: 800px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;  
+    gap: 25px; 
+    
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-size: 7vw;
+    color: #333;
+}
+
+input {
+   
+    padding: 6px;
+    border: 1.5px dashed #ccc;
+    border-radius: 10px;
+    height: 35px;
+   
+}
+
+button {
+    background-color: rgb(32, 131, 98);
+    color: #f3f3f3;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 6vw;
+}
+
+button:hover {
+    color: rgb(32, 131, 98);
+    background-color: #f3f3f3;
+    border: 1.5px dashed rgb(32, 131, 98);
+    padding: 8.5px 10px;
+   
+}
+
+#expenseTitle {
+    text-align: center;
+}
+
+#expensesList {
+    border: 2px dashed rgb(32, 131, 98);
+    max-height: 24vh;
+    overflow-y: scroll;
+}
+
+.expense {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.expense .info {
+    flex: 1;
+}
+
+.expense .delete-btn {
+    background-color: #FF5722;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+@media  (min-width: 376px) { /*Larger screens*/
+
+    label {
+        font-size: 20px;
+    }
+    button {
+        font-size: 20px;
+    }
+}
+
+@media  (min-width: 500px) { /*Larger screens*/
+
+   
+    input {
+        height: 40px;
+    }
+}

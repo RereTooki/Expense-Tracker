@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses Tracker App</title>
+    <link rel = "stylesheet" type = "text/css" href="styles.css" /> 
+
+</head>
+<body>
+    <!-- <div  class="introPage">
+        <h1 class="introText">Expense Tracker</h1>
+    </div> -->
+    <div class="bodyContent">
+        <div class="container">
+            
+            <form id="expenseForm">
+                <div class="flex">
+                    <label for="expenseName">Expense Name:</label>
+                    <input type="text" id="expenseName" required>
+                </div>
+    
+                <div class="flex">
+                    <label for="amount">Amount Spent:</label>
+                    <input type="number" id="amount" required>
+                </div>
+    
+                <div class="flex">
+                    <label for="category">Category of Expense:</label>
+                    <input type="text" id="category" required>
+                </div>
+    
+                <button type="button" onclick="addExpense()">Add Expense</button>
+            </form>
+    
+            <div class="flex">
+                <h2 id="expenseTitle">Expense List</h2>
+                <div id="expensesList">
+                    <!-- Expenses will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
