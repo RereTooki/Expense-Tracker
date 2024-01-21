@@ -1,10 +1,10 @@
 // Sample data for initial display
-const initialExpenses = [
-    { name: 'Groceries', amount: 50, category: 'Food' },
-    { name: 'Internet Bill', amount: 30, category: 'Utilities' },
-    { name: 'Internet Bill', amount: 30, category: 'Utilities' },
-    { name: 'Internet Bill', amount: 30, category: 'Utilities' },
-];
+// const initialExpenses = [
+//     { name: 'Groceries', amount: 50, category: 'Food' },
+//     { name: 'Internet Bill', amount: 30, category: 'Utilities' },
+//     { name: 'Internet Bill', amount: 30, category: 'Utilities' },
+//     { name: 'Internet Bill', amount: 30, category: 'Utilities' },
+// ];
 
 // Function to add an expense
 function addExpense() {
