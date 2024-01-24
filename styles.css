@@ -17,7 +17,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    border: 2px solid black;
+}
+
+.hidden {
+    display: none;
 }
 
 .introPage {
@@ -54,6 +57,7 @@ body {
     display: flex;
     flex-direction: column;  
     gap: 25px; 
+    margin-bottom: 100px;
     
 }
 
@@ -100,18 +104,15 @@ button:hover {
    
 }
 
-#expenseTitle {
+.expenseTitle {
     text-align: center;
+    font-weight: 900;
 }
 
 #expensesList {
     border: 2px dashed rgb(32, 131, 98);
     max-height: 24vh;
     overflow-y: scroll;
-}
-
-#randheight {
-    height: 1000px;
 }
 
 .expense {
