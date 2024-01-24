@@ -9,8 +9,6 @@ let expenses;
 
 // Function to add an expense
 function addExpense() {
-    const rere = "rere".toUpperCase();
-    console.log(rere);
     const expenseName = (document.getElementById('expenseName').value).toUpperCase();
     const amount = parseFloat(document.getElementById('amount').value);
     const category = (document.getElementById('category').value).toUpperCase();
