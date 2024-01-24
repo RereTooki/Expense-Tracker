@@ -1,7 +1,7 @@
 // Sample data for initial display
 const initialExpenses = [
     // { name: 'Groceries', amount: 50, category: 'Food' },
-    { name: 'Internet Bill', amount: 5000, category: 'Utilities' },
+    // { name: 'Internet Bill', amount: 5000, category: 'Utilities' },
 ];
 
 // Move the declaration of expenses to the top-level scope
@@ -74,8 +74,8 @@ function displayExpenses() {
 // Function to display the pie chart using D3.js
 function displayPieChart() {
     const svg = d3.select("#expenseChart");
-    const width = 500;
-    const height = 100;
+    const width = 300;
+    const height = 150;
     const radius = Math.min(width, height) / 2;
 
     // Remove existing chart elements
@@ -144,3 +144,19 @@ document.addEventListener('DOMContentLoaded', function () {
     // Delay the pie chart initialization to make sure the canvas element is available
     setTimeout(displayPieChart, 0);
 });
+
+
+
+function validateLogin(event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username.trim() !== '' && password.trim() !== '') {
+        // Redirect to the main expense tracker page or perform any other action
+        window.location.href = "index.html";
+    } else {
+        alert('Please enter both username and password.');
+    }
+}
