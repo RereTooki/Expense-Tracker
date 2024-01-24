@@ -3,60 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expenses Tracker App</title>
-    <link rel = "stylesheet" type = "text/css" href="styles.css" /> 
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <!-- Include D3.js library -->
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div  class="introPage">
-        <h1 class="introText" data-aos="zoom-in" data-aos-duration="700">Expense Tracker</h1>
-    </div>
-    <div class="bodyContent" data-aos="zoom-in" data-aos-duration="700">
-        <div class="container">
-            
-            <form id="expenseForm">
-                <div class="flex">
-                    <label for="expenseName">Expense Names:</label>
-                    <input type="text" id="expenseName" required>
-                </div>
-    
-                <div class="flex">
-                    <label for="amount">Amount Spent (₦):</label>
-                    <input type="number" id="amount" required>
-                </div>
-    
-                <div class="flex">
-                    <label for="category">Category of Expense:</label>
-                    <input type="text" id="category" required>
-                </div>
-    
-                <button type="button" onclick="addExpense()">Add Expense</button>
-            </form>
-    
+    <div class="introText">Expense Tracker</div>
+    <div class="login-container">
+        <h2 class="center-align font-lg">Login Page</h2>
+        <form id="loginForm" onsubmit="validateLogin(event)">
             <div class="flex">
-                <h2 class="expenseTitle">Expense List</h2>
-                <div id="expensesList">
-                    <!-- Expenses will be displayed here -->
-                </div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
             </div>
-            <div class="flexCentre">
-                <div class="expenseTitle ">Graphical Representation of Expenses</div>
-                <div class="chart-container">
-                    <svg id="expenseChart" class="scaleUp"></svg>
-                </div>
+
+            <div class="flex">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
             </div>
-            
-        </div>
+            <button type="submit">Login</button>
+        </form>
     </div>
+
     <script src="script.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" integrity="sha512-DZfZZ4Q9ZTPZ2MIiLZqH3HvzPFuZxIjZYtNEeWMt22dHuTm/+W3K2z4KTQZPLAekAVyg1xem+BFu0u2igkAG1Q==" crossorigin="anonymous"></script> -->
-    <script>
-        AOS.init();
-    </script>
-  
 </body>
 </html>

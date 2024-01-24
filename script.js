@@ -155,7 +155,7 @@ function validateLogin(event) {
 
     if (username.trim() !== '' && password.trim() !== '') {
         // Redirect to the main expense tracker page or perform any other action
-        window.location.href = "index.html";
+        window.location.href = "expenseTracker.html";
     } else {
         alert('Please enter both username and password.');
     }
