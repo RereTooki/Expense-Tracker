@@ -1,10 +1,11 @@
 // Sample data for initial display
 const initialExpenses = [
-    // { name: 'Groceries', amount: 50, category: 'Food' },
-    // { name: 'Internet Bill', amount: 30, category: 'Utilities' },
-    // { name: 'Internet Bill', amount: 30, category: 'Utilities' },
-    // { name: 'Internet Bill', amount: 30, category: 'Utilities' },
+    { name: 'Groceries', amount: 50, category: 'Food' },
+    { name: 'Internet Bill', amount: 30, category: 'Utilities' },
 ];
+
+// Move the declaration of expenses to the top-level scope
+let expenses;
 
 // Function to add an expense
 function addExpense() {
@@ -14,7 +15,7 @@ function addExpense() {
 
     if (expenseName && !isNaN(amount) && category) {
         // Create a new expense object
-        const newExpense = { name: expenseName.toUpperCase(), amount, category };
+        const newExpense = { name: expenseName, amount, category };
 
         // Add the new expense to the expenses list
         expenses.push(newExpense);
@@ -22,12 +23,15 @@ function addExpense() {
         // Display the updated list of expenses
         displayExpenses();
 
+        // Update the pie chart
+        displayPieChart();
+
         // Clear the input fields
         document.getElementById('expenseName').value = '';
         document.getElementById('amount').value = '';
         document.getElementById('category').value = '';
     } else {
-        alert('Please make sure all fields are filled');
+        alert('Please fill in all the fields with valid values.');
     }
 }
 
@@ -35,6 +39,7 @@ function addExpense() {
 function deleteExpense(index) {
     expenses.splice(index, 1);
     displayExpenses();
+    displayPieChart(); // Update the pie chart after deletion
 }
 
 // Function to display the list of expenses
@@ -42,28 +47,80 @@ function displayExpenses() {
     const expensesList = document.getElementById('expensesList');
     expensesList.innerHTML = '';
 
-    expenses.forEach((expense, index) => {
-        const expenseElement = document.createElement('div');
-        expenseElement.classList.add('expense');
+    // Check if expenses is defined before attempting to forEach
+    if (expenses) {
+        expenses.forEach((expense, index) => {
+            const expenseElement = document.createElement('div');
+            expenseElement.classList.add('expense');
 
-        const infoElement = document.createElement('div');
-        infoElement.classList.add('info');
-        infoElement.innerHTML = `<strong>${expense.name}</strong> - ₦${expense.amount} [${expense.category}]`;
+            const infoElement = document.createElement('div');
+            infoElement.classList.add('info');
+            infoElement.innerHTML = `<strong>${expense.name}</strong> - $${expense.amount} (${expense.category})`;
 
-        const deleteBtnElement = document.createElement('button');
-        deleteBtnElement.classList.add('delete-btn');
-        deleteBtnElement.innerText = 'Delete';
-        deleteBtnElement.onclick = () => deleteExpense(index);
+            const deleteBtnElement = document.createElement('button');
+            deleteBtnElement.classList.add('delete-btn');
+            deleteBtnElement.innerText = 'Delete';
+            deleteBtnElement.onclick = () => deleteExpense(index);
 
-        expenseElement.appendChild(infoElement);
-        expenseElement.appendChild(deleteBtnElement);
+            expenseElement.appendChild(infoElement);
+            expenseElement.appendChild(deleteBtnElement);
 
-        expensesList.appendChild(expenseElement);
-    });
+            expensesList.appendChild(expenseElement);
+        });
+    }
 }
 
-// Initialize with the sample data
-const expenses = [...initialExpenses];
+// Function to display the pie chart using D3.js
+function displayPieChart() {
+    const svg = d3.select("#expenseChart");
+    const width = 100; // Adjust the width and height as needed
+    const height = 100;
+    const radius = Math.min(width, height) / 2;
 
-// Display the initial list of expenses
-displayExpenses();
+    // Remove existing chart elements
+    svg.selectAll("*").remove();
+
+    // Extract amounts and categories for D3.js pie chart
+    const expenseCategories = Array.from(new Set(expenses.map(expense => expense.category)));
+    const categoryData = expenseCategories.map(category => {
+        const categoryExpenses = expenses.filter(expense => expense.category === category);
+        return categoryExpenses.reduce((total, expense) => total + expense.amount, 0);
+    });
+
+    // Create a new pie chart
+    const pie = d3.pie()
+        .value(d => d)
+        .sort(null);
+
+    const arc = d3.arc()
+        .innerRadius(0)
+        .outerRadius(radius);
+
+    const color = d3.scaleOrdinal()
+        .range([
+            '#FF6384', '#36A2EB', '#FFCE56', '#8e5ea2', '#3cba9f',
+            '#e8c3b9', '#c45850', '#4CAF50', '#FF5722', '#2196F3'
+        ]);
+
+    const g = svg.append("g")
+        .attr("transform", `translate(${width / 2},${height / 2})`);
+
+    const path = g.selectAll("path")
+        .data(pie(categoryData))
+        .enter().append("path")
+        .attr("fill", (d, i) => color(i))
+        .attr("d", arc);
+}
+
+
+// Ensure the page is fully loaded before executing JavaScript
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialize with the sample data
+    expenses = [...initialExpenses];
+
+    // Display the initial list of expenses
+    displayExpenses();
+
+    // Delay the pie chart initialization to make sure the canvas element is available
+    setTimeout(displayPieChart, 0);
+});

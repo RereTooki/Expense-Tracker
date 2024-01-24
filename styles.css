@@ -17,6 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    border: 2px solid black;
 }
 
 .introPage {
@@ -107,6 +108,10 @@ button:hover {
     border: 2px dashed rgb(32, 131, 98);
     max-height: 24vh;
     overflow-y: scroll;
+}
+
+#randheight {
+    height: 1000px;
 }
 
 .expense {

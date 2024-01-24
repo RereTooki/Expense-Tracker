@@ -6,6 +6,8 @@
     <title>Expenses Tracker App</title>
     <link rel = "stylesheet" type = "text/css" href="styles.css" /> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Include D3.js library -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
 
 </head>
 <body>
@@ -40,10 +42,17 @@
                     <!-- Expenses will be displayed here -->
                 </div>
             </div>
+            <div class="flex" >
+                <div class="chart-container ">
+                    <svg id="expenseChart"></svg>
+                </div>
+            </div>
+            
         </div>
     </div>
     <script src="script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" integrity="sha512-DZfZZ4Q9ZTPZ2MIiLZqH3HvzPFuZxIjZYtNEeWMt22dHuTm/+W3K2z4KTQZPLAekAVyg1xem+BFu0u2igkAG1Q==" crossorigin="anonymous"></script> -->
     <script>
         AOS.init();
     </script>
