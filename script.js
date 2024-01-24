@@ -1,7 +1,7 @@
 // Sample data for initial display
 const initialExpenses = [
     { name: 'Groceries', amount: 50, category: 'Food' },
-    { name: 'Internet Bill', amount: 30, category: 'Utilities' },
+    { name: 'Internet Bill', amount: 50, category: 'Utilities' },
 ];
 
 // Move the declaration of expenses to the top-level scope
@@ -73,7 +73,7 @@ function displayExpenses() {
 // Function to display the pie chart using D3.js
 function displayPieChart() {
     const svg = d3.select("#expenseChart");
-    const width = 100; // Adjust the width and height as needed
+    const width = 300;
     const height = 100;
     const radius = Math.min(width, height) / 2;
 
@@ -110,8 +110,27 @@ function displayPieChart() {
         .enter().append("path")
         .attr("fill", (d, i) => color(i))
         .attr("d", arc);
-}
 
+    // Legend
+    const legend = svg.selectAll(".legend")
+        .data(categoryData)
+        .enter().append("g")
+        .attr("class", "legend")
+        .attr("transform", (d, i) => `translate(0,${i * 20})`);
+
+    legend.append("rect")
+        .attr("x", width - 18)
+        .attr("width", 18)
+        .attr("height", 18)
+        .style("fill", (d, i) => color(i));
+
+    legend.append("text")
+        .attr("x", width - 24)
+        .attr("y", 9)
+        .attr("dy", ".35em")
+        .style("text-anchor", "end")
+        .text((d, i) => expenseCategories[i]);
+}
 
 // Ensure the page is fully loaded before executing JavaScript
 document.addEventListener('DOMContentLoaded', function () {
