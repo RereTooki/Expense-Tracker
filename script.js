@@ -160,3 +160,7 @@ function validateLogin(event) {
         alert('Please enter both username and password.');
     }
 }
+
+function goToSignUp() {
+    window.location.href = "signUp.html";
+}

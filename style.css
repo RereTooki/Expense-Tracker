@@ -45,6 +45,10 @@ body {
     gap: 5px;
 }
 
+#signUpForm {
+    max-height: 239px;
+    overflow-y: scroll;
+}
 input {
    
     padding: 6px;
@@ -54,7 +58,7 @@ input {
    
 }
 
-button {
+.btnLgn {
     background-color: rgb(32, 131, 98);
     color: #f3f3f3;
     padding: 10px;
@@ -64,7 +68,7 @@ button {
     font-size: 6vw;
 }
 
-button:hover {
+.btnLgn:hover {
     color: rgb(32, 131, 98);
     background-color: #f3f3f3;
     border: 1.5px dashed rgb(32, 131, 98);
@@ -72,12 +76,25 @@ button:hover {
    
 }
 
+.btnSgnUp{
+    width: fit-content;
+    align-self: center;
+    border: 0;
+    cursor: pointer;
+    font-size: 4vw;
+}
+
+.btnSgnUp:hover{
+    color: rgb(32, 131, 98);
+}
+
+
 
 .login-container {
     border-radius: 10px;    
     background-color: #f3f3f3;
     width: 80vw;
-    max-width: 800px;
+    max-width: 700px;
     padding: 20px;
     display: flex;
     flex-direction: column;  
@@ -100,8 +117,12 @@ input {
 
 @media  (min-width: 376px) { /*Larger screens*/
 
-    label, button {
+    label, .btnLgn {
         font-size: 20px;
+    }
+
+    .btnSgnUp {
+        font-size: 15px;
     }
   
 }
@@ -109,7 +130,7 @@ input {
 
 @media  (max-width: 376px) { /*Larger screens*/
 
-    .font-lg, .introText {
+    .font-lg, .introText{
         font-size: 20px;
     }
 }

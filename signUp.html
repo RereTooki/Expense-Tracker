@@ -9,22 +9,29 @@
 <body>
     <div class="introText">Expense Tracker</div>
     <div class="login-container">
-        <h2 class="center-align font-lg">Login</h2>
-        <form id="loginForm" onsubmit="validateLogin(event)">
+        <h2 class="center-align font-lg">Sign Up</h2>
+        <form id="signUpForm" onsubmit="validateSignUp(event)">
             <div class="flex">
                 <label for="username">Username:</label>
                 <input type="text" id="username" required>
             </div>
-
+            <div class="flex">
+                <label for="username">Email:</label>
+                <input type="email" id="email" required>
+            </div>
             <div class="flex">
                 <label for="password">Password:</label>
                 <input type="password" id="password" required>
             </div>
-            <button type="submit" class="btnLgn">Login</button>
+            <div class="flex">
+                <label for="password">Confirm Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="btnLgn">Sign Up</button>
         </form>
-        <button type="submit" class="btnSgnUp" onclick="goToSignUp()">Not yet signed up? Sign Up</button>
+        <button type="submit" class="btnSgnUp" onclick="goToLogIn()">Already signed up? Login</button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script2.js"></script>
 </body>
 </html>
