@@ -9,7 +9,6 @@ function validateSignUp(event) {
     const Cpassword = document.getElementById('cpassword').value;
 
     if (firstname.trim() !== '' && lastname.trim() !== '' && username.trim() !== '' && email.trim() !== '' && password.trim() !== '' && Cpassword.trim() !== '') {
-        // Redirect to the main expense tracker page or perform any other action
         window.location.href = "index.html";
     } else {
         alert('Please enter both username and password.');

@@ -1,9 +1,3 @@
-// Sample data for initial display
-const initialExpenses = [
-    // { name: 'Groceries', amount: 50, category: 'Food' },
-    // { name: 'Internet Bill', amount: 5000, category: 'Utilities' },
-];
-
 // Move the declaration of expenses to the top-level scope
 let expenses;
 
@@ -153,8 +147,7 @@ function validateLogin(event) {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    if (username.trim() !== '' && password.trim() !== '') {
-        // Redirect to the main expense tracker page or perform any other action
+    if (username.trim() !== '' && password.trim() !== '') {        
         window.location.href = "expenseTracker.html";
     } else {
         alert('Please enter both username and password.');
@@ -162,7 +155,6 @@ function validateLogin(event) {
 }
 
 function goToSignUpPage() {
-    // Replace 'signUp.php' with the correct path if needed
     window.location.href = 'signUp.html';
 }
 yy
