@@ -1,3 +1,4 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,22 +11,30 @@
     <div class="introText">Expense Tracker</div>
     <div class="login-container">
         <h2 class="center-align font-lg">Sign Up</h2>
-        <form id="signUpForm" onsubmit="validateSignUp(event)">
+        <form action="connect.php" method="post" id="signUpForm" onsubmit="validateSignUp(event)">
             <div class="flex">
-                <label for="username">Username:</label>
-                <input type="text" id="username" required>
+                <label for="firstname">Firstname:</label>
+                <input type="text" id="firstname" name="firstname" required>
             </div>
             <div class="flex">
-                <label for="username">Email:</label>
-                <input type="email" id="email" required>
+                <label for="lastname">Lastname:</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+            <div class="flex">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="flex">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="flex">
                 <label for="password">Password:</label>
-                <input type="password" id="password" required>
+                <input type="password" id="password" name="password" required>
             </div>
             <div class="flex">
-                <label for="password">Confirm Password:</label>
-                <input type="password" id="Cpassword" required>
+                <label for="cpassword">Confirm Password:</label>
+                <input type="password" id="cpassword" name="cpassword"  required>
             </div>
             <button type="submit" class="btnLgn">Sign Up</button>
         </form>

@@ -161,6 +161,7 @@ function validateLogin(event) {
     }
 }
 
-function goToSignUp() {
-    window.location.href = "signUp.html";
+function goToSignUpPage() {
+    // Replace 'signUp.php' with the correct path if needed
+    window.location.href = 'signUp.php';
 }
