@@ -18,5 +18,5 @@ function validateSignUp(event) {
 
 
 function goToLogIn() {
-    window.location.href = "index.html";
+    window.location.href = "index.php";
 }
