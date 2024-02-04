@@ -1,3 +1,6 @@
+// Iniatilize an empty array
+const initialExpenses = [];
+
 // Move the declaration of expenses to the top-level scope
 let expenses;
 
